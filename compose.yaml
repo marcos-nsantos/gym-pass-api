@@ -1,11 +1,11 @@
 services:
   api-solid-pg:
-    image: bitnami/postgresql
+    image: postgres:16.4-alpine
     ports:
       - "5432:5432"
     environment:
-      - POSTGRESQL_USERNAME=docker
-      - POSTGRESQL_PASSWORD=docker
-      - POSTGRESQL_DATABASE=ignitenode03
+      - POSTGRES_USER=docker
+      - POSTGRES_PASSWORD=docker
+      - POSTGRES_DB=ignitenode03
     volumes:
-      - ./data:/bitnami/postgresql/data
+      - ./data:/var/lib/postgresql/data
