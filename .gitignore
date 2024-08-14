@@ -130,6 +130,7 @@ dist
 
 # Docker Volumes
 data
+postgres-data
 
 .idea
 .vscode
