@@ -3,8 +3,9 @@ import { Prisma, User } from "@prisma/client";
 import { UsersRepository } from "@/repositories/users-repository";
 
 export class PrismaUsersRepository implements UsersRepository {
-  findById(id: string): Promise<User | null> {
-    throw new Error("Method not implemented.");
+  async findById(id: string): Promise<User | null> {
+    const user = await prisma.user.findUnique({ where: { id } });
+    return user;
   }
 
   async create(data: Prisma.UserCreateInput): Promise<User> {
